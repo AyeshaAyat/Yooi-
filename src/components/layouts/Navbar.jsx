@@ -15,8 +15,12 @@ const Navbar = () => {
               <Image src={logo} alt={logo} className="h-[60px] " />
             </div>
             <div className="icon text-black  ">
-              <FaBars className="size-6" />
-
+              <FaBars className="size-6 relative" />
+              <div className="ul absolute  ">
+                <li>Home</li>
+                <li>Login</li>
+                <li>Signup</li>
+              </div>
             </div>
           </Flex>
         </div>
