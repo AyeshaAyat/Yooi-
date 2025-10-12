@@ -6,7 +6,9 @@ import Footer from '../layouts/Footer'
 const Home = () => {
   return (
    <>
-   
+   <Navbar/>
+   <Outlet/>
+   <Footer/>
    </>
   )
 }
