@@ -1,12 +1,16 @@
 import Home from "../pages/Home"
-import Login from "../pages/Login"
+import Navbar from '../layouts/Navbar'
+import { Outlet } from 'react-router-dom'
+import Footer from '../layouts/Footer'
 
 
 const RootLayout = () => {
   return (
     <>
-    <Login/>
-<Home/>
+   
+<Navbar/>
+   <Outlet/>
+   <Footer/>
     </>
   )
 }

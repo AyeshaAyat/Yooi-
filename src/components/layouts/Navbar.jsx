@@ -5,6 +5,7 @@ import logo from "/public/LOGO (2).png";
 import { FaBars } from "react-icons/fa";
 
 import Flex from "../Flex";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
@@ -14,13 +15,22 @@ const Navbar = () => {
             <div className="logo w-max ">
               <Image src={logo} alt={logo} className="h-[60px] " />
             </div>
-            <div className="icon text-black  ">
-              <FaBars className="size-6 relative" />
-              <div className="ul absolute  ">
-                <li>Home</li>
-                <li>Login</li>
-                <li>Signup</li>
-              </div>
+            <div className="icon text-black  relative group">
+              <FaBars className="size-6  cursor-pointer" />
+<div className="absolute hidden group-hover:block py-2 items-center px-2 right-7 top-[-8px]">
+
+              <ul className="flex justify-between gap-5">
+                <Link to={"/home"}>
+                <li className="hover:text-gray-600 cursor-pointer">Home</li>
+                </Link>
+                <Link to={"/"}>
+                <li className="hover:text-gray-600 cursor-pointer">Login</li>
+                </Link>
+                <Link to={"/signup"}>
+                <li className="hover:text-gray-600 cursor-pointer">Signup</li>
+                </Link>
+              </ul>
+</div>
             </div>
           </Flex>
         </div>

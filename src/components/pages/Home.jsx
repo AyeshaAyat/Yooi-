@@ -1,14 +1,10 @@
 import React from 'react'
-import Navbar from '../layouts/Navbar'
-import { Outlet } from 'react-router-dom'
-import Footer from '../layouts/Footer'
+
 
 const Home = () => {
   return (
    <>
-   <Navbar/>
-   <Outlet/>
-   <Footer/>
+ <div className="main py-5 bg-green-400 "> its home</div>
    </>
   )
 }
