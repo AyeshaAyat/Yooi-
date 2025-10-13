@@ -76,13 +76,13 @@ const Login = () => {
                 Log in with Google
               </button>
             </div>
-            <div className="reset flex justify-between ml-10 w-60  ">
+            <div className="reset flex justify-between ml-10 w-60  mt-0.5">
                 <div className="left">
-                  <button className="text-[7px] font-sans mr-3 text-[#3b3a3a]">Find Account</button>
-                  <button className="text-[7px] font-sans  text-[#3b3a3a]">Reset Password</button>              
+                  <button className="text-[7px] font-sans mr-3 hover:text-black cursor-pointer text-[#3b3a3a]">Find Account</button>
+                  <button className="text-[7px] font-sans hover:text-black cursor-pointer  text-[#3b3a3a]">Reset Password</button>              
                 </div>
                   <div className="right">
-                    <button className="text-[8px] font-sans font-semibold text-black">Sign Up</button>
+                    <button className="text-[8px] font-sans font-semibold hover:text-red-500 cursor-pointer text-black">Sign Up</button>
                   </div>
 
                   
