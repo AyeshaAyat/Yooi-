@@ -6,7 +6,12 @@ import { FaBars } from "react-icons/fa";
 
 import Flex from "../Flex";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Navbar = () => {
+  const [menu,setMenu] = useState(false);
+  const handleBarIcon =()=>{
+    setMenu(!menu)
+  }
   return (
     <>
       <Container>
@@ -15,9 +20,13 @@ const Navbar = () => {
             <div className="logo w-max ">
               <Image src={logo} alt={logo} className="h-[60px] " />
             </div>
-            <div className="icon text-black  relative group">
-              <FaBars className="size-6  cursor-pointer" />
-<div className="absolute hidden group-hover:block py-2 items-center px-2 right-7 top-[-8px]">
+            <div onClick={handleBarIcon} className="icon relative  ">
+
+              <FaBars className="size-6 text-black  cursor-pointer" />
+
+{menu &&(
+  
+  <div className="Menu text-black absolute right-7 top-[-8px] py-2 items-center px-2 ">
 
               <ul className="flex justify-between gap-5">
                 <Link to={"/home"}>
@@ -30,7 +39,8 @@ const Navbar = () => {
                 <li className="hover:text-gray-600 cursor-pointer">Signup</li>
                 </Link>
               </ul>
-</div>
+            </div>
+            )}
             </div>
           </Flex>
         </div>
