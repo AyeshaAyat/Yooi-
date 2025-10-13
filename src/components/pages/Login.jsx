@@ -14,19 +14,7 @@ const Login = () => {
   return (
     <>
       <Container>
-        <div className="main pb-3 relative  bg-white m-auto w-100 rounded-[6px] mt-10">
-
-
-
-        {/* ---------------------BlackIcon---------- */}
-        {/* <IoIosInformationCircleOutline className="absolute text-black text-xl bottom-4 right-4"/> */}
-        {/* ---------------------BlackIcon---------- */}
-
-
-
-
-
-
+        <div className="main pb-3   bg-white m-auto w-100 rounded-[6px] mt-15">
           <div className="up flex px-3 justify-between scale-60 border-[#c1bfbf] border-b-1">
             <h1 className="text-[48px] text-[#111111] font-sans mt-4  ">---</h1>
             <h1 className="text-[48px] text-[#111111] font-sans mt-4  ">
@@ -34,7 +22,7 @@ const Login = () => {
             </h1>
             <Image src={bgFriends} alt={bgFriends} />
           </div>
-          <div className="down border-1 p-5 mx-2.5   border-[#383838] rounded-[6px]">
+          <div className="down border-1 p-5 mx-2.5   border-[#858585]  rounded-[6px]">
             <div className="flex gap-2 mb-2.5">
               <FaStar className="text-black size-4 mt-2" />
               <input
@@ -77,15 +65,19 @@ const Login = () => {
               </button>
             </div>
             <div className="reset flex justify-between ml-10 w-60  mt-0.5">
-                <div className="left">
-                  <button className="text-[7px] font-sans mr-3 hover:text-black cursor-pointer text-[#3b3a3a]">Find Account</button>
-                  <button className="text-[7px] font-sans hover:text-black cursor-pointer  text-[#3b3a3a]">Reset Password</button>              
-                </div>
-                  <div className="right">
-                    <button className="text-[8px] font-sans font-semibold hover:text-red-500 cursor-pointer text-black">Sign Up</button>
-                  </div>
-
-                  
+              <div className="left">
+                <button className="text-[7px] font-sans mr-3 hover:text-black cursor-pointer text-[#3b3a3a]">
+                  Find Account
+                </button>
+                <button className="text-[7px] font-sans hover:text-black cursor-pointer  text-[#3b3a3a]">
+                  Reset Password
+                </button>
+              </div>
+              <div className="right">
+                <button className="text-[8px] font-sans font-semibold hover:text-red-500 cursor-pointer text-black">
+                  Sign Up
+                </button>
+              </div>
             </div>
           </div>
         </div>
