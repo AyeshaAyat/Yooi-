@@ -6,18 +6,27 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import { useState } from "react";
 
 const Login = () => {
-
-
   const [InfoSave, setInfoSave] = useState(false);
   const handlePassInfo = () => {
-  setInfoSave(!InfoSave);
-    
+    setInfoSave(!InfoSave);
   };
 
   return (
     <>
       <Container>
-        <div className="main pb-3  bg-white m-auto w-100 rounded-[6px] mt-6">
+        <div className="main pb-3 relative  bg-white m-auto w-100 rounded-[6px] mt-10">
+
+
+
+        {/* ---------------------BlackIcon---------- */}
+        {/* <IoIosInformationCircleOutline className="absolute text-black text-xl bottom-4 right-4"/> */}
+        {/* ---------------------BlackIcon---------- */}
+
+
+
+
+
+
           <div className="up flex px-3 justify-between scale-60 border-[#c1bfbf] border-b-1">
             <h1 className="text-[48px] text-[#111111] font-sans mt-4  ">---</h1>
             <h1 className="text-[48px] text-[#111111] font-sans mt-4  ">
@@ -30,7 +39,7 @@ const Login = () => {
               <FaStar className="text-black size-4 mt-2" />
               <input
                 type="email"
-                className="w-60  py-1 focus:outline-0 text-[14px]  text-black border-b-1"
+                className="w-70  py-1 focus:outline-0 text-[14px] border-[#a1a0a0]  text-black border-b-1"
                 placeholder="Your email"
               />
             </div>
@@ -40,14 +49,12 @@ const Login = () => {
               <input
                 onClick={handlePassInfo}
                 type="email"
-                className="w-55  py-1 focus:outline-0 text-[14px]  text-black border-b-1"
+                className="w-65  py-1 focus:outline-0 text-[14px]  border-[#a1a0a0] text-black border-b-1"
                 placeholder="@!@#password"
               />
             </div>
             {/* ----------------infoSave----------- */}
             {InfoSave && (
-
-             
               <div className="infoSave flex items-center gap-[2px]  mt-2 w-30  h-4.5 ml-6  ">
                 <input
                   type="checkbox"
@@ -58,15 +65,27 @@ const Login = () => {
                 </p>
                 <IoIosInformationCircleOutline className="text-red-500 text-[11px]" />
               </div>
-          
-                )}
+            )}
             {/* ----------------infoSave----------- */}
-            <div className="buttons mt-8 ml-12">
+            <div className="buttons mt-7 ml-10">
+              <button className="h-7 w-60 rounded-[3px] hover:bg-[#e3e0e0]/40 cursor-pointer bg-yellow-300/90 text-[#181715] font-sans font-medium text-[11px] ">
+                Log In
+              </button>
+              <p className="text-[10px] ml-29 text-[#cecccc] m-1">or</p>
+              <button className="h-7 w-60 rounded-[3px] hover:bg-[#e3e0e0]/40 cursor-pointer bg-[#e3e0e0] text-[#181715] font-sans font-medium text-[11px] ">
+                Log in with Google
+              </button>
+            </div>
+            <div className="reset flex justify-between ml-10 w-60  ">
+                <div className="left">
+                  <button className="text-[7px] font-sans mr-3 text-[#3b3a3a]">Find Account</button>
+                  <button className="text-[7px] font-sans  text-[#3b3a3a]">Reset Password</button>              
+                </div>
+                  <div className="right">
+                    <button className="text-[8px] font-sans font-semibold text-black">Sign Up</button>
+                  </div>
 
-            <button className="h-7 w-55 rounded-[2px] bg-yellow-300/90 text-[#181715] font-sans font-medium text-[12px] ">Log In</button>
-            <p className="text-[10px] ml-26 text-[#BDBDBD] mt-1">or</p>
-                        <button className="h-7 w-55 rounded-[2px] bg-[#e3e0e0] text-[#181715] font-sans font-medium text-[12px] ">Sign up</button>
-
+                  
             </div>
           </div>
         </div>
