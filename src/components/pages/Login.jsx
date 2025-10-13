@@ -4,6 +4,7 @@ import Image from "../ui elements/Image";
 import bgFriends from "../../assets/bgFriends.png";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [InfoSave, setInfoSave] = useState(false);
@@ -73,11 +74,12 @@ const Login = () => {
                   Reset Password
                 </button>
               </div>
-              <div className="right">
+              <Link to="/signup">
                 <button className="text-[8px] font-sans font-semibold hover:text-red-500 cursor-pointer text-black">
                   Sign Up
                 </button>
-              </div>
+              </Link>
+              
             </div>
           </div>
         </div>
