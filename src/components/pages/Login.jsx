@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <>
       <Container>
-        <div className="main pb-3  bg-[#e3e0e0] m-auto w-100 rounded-[6px] mt-6">
+        <div className="main pb-3  bg-white m-auto w-100 rounded-[6px] mt-6">
           <div className="up flex px-3 justify-between scale-60 border-[#c1bfbf] border-b-1">
             <h1 className="text-[48px] text-[#111111] font-sans mt-4  ">---</h1>
             <h1 className="text-[48px] text-[#111111] font-sans mt-4  ">
@@ -61,6 +61,13 @@ const Login = () => {
           
                 )}
             {/* ----------------infoSave----------- */}
+            <div className="buttons mt-8 ml-12">
+
+            <button className="h-7 w-55 rounded-[2px] bg-yellow-300/90 text-[#181715] font-sans font-medium text-[12px] ">Log In</button>
+            <p className="text-[10px] ml-26 text-[#BDBDBD] mt-1">or</p>
+                        <button className="h-7 w-55 rounded-[2px] bg-[#e3e0e0] text-[#181715] font-sans font-medium text-[12px] ">Sign up</button>
+
+            </div>
           </div>
         </div>
       </Container>
