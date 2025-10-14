@@ -17,9 +17,11 @@ const Navbar = () => {
       <Container>
         <div className="main py-2 px-20  bg-yellow-300">
           <Flex className="justify-between ">
+            <Link to={"/home"}>
             <div className="logo w-max ">
               <Image src={logo} alt={logo} className="h-[60px] " />
             </div>
+             </Link>
             <div onClick={handleBarIcon} className="icon relative  ">
 
               <FaBars className="size-6 text-black  cursor-pointer" />
