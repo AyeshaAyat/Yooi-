@@ -1,4 +1,3 @@
-
 import Container from "../Container";
 import Image from "../ui elements/Image";
 import bgFriends from "../../assets/bgFriends.png";
@@ -17,30 +16,27 @@ const Login = () => {
       <Container>
         <div className="main  py-2 bg-white m-auto w-80 rounded-[6px] mt-15">
           <div className="up flex  items-center pl-7   border-[#c1bfbf] border-b-1">
-            <h1 className="text-[30px] text-[#111111] leading-0 font-sans ">---</h1>
+            <h1 className="text-[30px] text-[#111111] leading-0 font-sans ">
+              ---
+            </h1>
             <h1 className="text-[30px] text-[#111111] leading-7 font-sans ">
-             Yooi
+              Yooi
             </h1>
             <Image src={bgFriends} alt={bgFriends} className="h-13 " />
           </div>
           <div className="down border-1 m-3 text-center pb-3  border-[#d7d5d5]  rounded-[6px]">
-           
-       
-
             <input
               type="email"
               className="w-65 mt-3  py-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-b-1"
               placeholder="Your Email"
-              />
-            <input onClick={handlePassInfo}
+            />
+            <input
+              onClick={handlePassInfo}
               type="email"
               className="w-65 mt-3  py-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-b-1"
               placeholder="@!@#password"
-              />
-           
-          
+            />
 
-           
             {/* ----------------infoSave----------- */}
             {InfoSave && (
               <div className="infoSave flex  items-center px-4 py-2 ">
@@ -78,7 +74,6 @@ const Login = () => {
                   Sign Up
                 </button>
               </Link>
-              
             </div>
           </div>
         </div>
