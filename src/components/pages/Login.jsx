@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   const [InfoSave, setInfoSave] = useState(false);
-  const handlePassInput = () => {
-    
-  };
+
 
   return (
     <>
@@ -31,7 +29,7 @@ const Login = () => {
               placeholder="Your Email"
             />
             <input
-              onClick={handlePassInput}
+             
               type="email"
               className="w-65 mt-3  py-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-b-1"
               placeholder="@!@#password"
