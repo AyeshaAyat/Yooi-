@@ -22,20 +22,20 @@ const Signup = () => {
          
           <div className="down text-center mt-3  ">
             <input 
-              onChange={handleNameInput}
+             
               type="text"
               className="w-60 mt-3  p-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-1"
               placeholder="Full Name"
             />
             <input
-              onChange={handleEmailInput}
+           
               type="email"
               className="w-60 mt-3 p-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-1"
               placeholder="Email"
             />
 
             <input
-              onChange={handlePasswordInput}
+            
               type="email"
               className="w-60 mt-3 p-1 focus:outline-0 text-[12px]  border-[#a1a0a0] text-black border-1"
               placeholder="Password"
