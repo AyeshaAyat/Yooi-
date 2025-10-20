@@ -5,22 +5,6 @@ import Cartoons from "../../assets/cartoons.png";
 import { Link } from "react-router-dom";
 const Signup = () => {
 
-const [name,SetName]= useState("");
-const [email,SetEmail]= useState("");
-const [password,SetPassword]= useState("");
-
-const handleNameInput=(e)=>{
-  SetName(e.target.value);
-}
-const handleEmailInput=(e)=>{
-  SetEmail(e.target.value);
-
-}
-const handlePasswordInput=(e)=>{
-  SetPassword(e.target.value);
-
-}
-
 
   return (
     <>
