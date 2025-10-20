@@ -4,6 +4,24 @@ import Image from "../ui elements/Image";
 import Cartoons from "../../assets/cartoons.png";
 import { Link } from "react-router-dom";
 const Signup = () => {
+
+const [name,SetName]= useState("");
+const [email,SetEmail]= useState("");
+const [password,SetPassword]= useState("");
+
+const handleNameInput=(e)=>{
+  SetName(e.target.value);
+}
+const handleEmailInput=(e)=>{
+  SetEmail(e.target.value);
+
+}
+const handlePasswordInput=(e)=>{
+  SetPassword(e.target.value);
+
+}
+
+
   return (
     <>
       <Container>
@@ -19,18 +37,21 @@ const Signup = () => {
           </p>
          
           <div className="down text-center mt-3  ">
-            <input
+            <input 
+              onChange={handleNameInput}
               type="text"
               className="w-60 mt-3  p-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-1"
               placeholder="Full Name"
             />
             <input
+              onChange={handleEmailInput}
               type="email"
               className="w-60 mt-3 p-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-1"
               placeholder="Email"
             />
 
             <input
+              onChange={handlePasswordInput}
               type="email"
               className="w-60 mt-3 p-1 focus:outline-0 text-[12px]  border-[#a1a0a0] text-black border-1"
               placeholder="Password"
