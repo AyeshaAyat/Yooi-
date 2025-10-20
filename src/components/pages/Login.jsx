@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   const [InfoSave, setInfoSave] = useState(false);
-  const handlePassInfo = () => {
-    setInfoSave(!InfoSave);
+  const handlePassInput = () => {
+    
   };
 
   return (
@@ -25,13 +25,13 @@ const Login = () => {
             <Image src={bgFriends} alt={bgFriends} className="h-13 " />
           </div>
           <div className="down border-1 m-3 text-center pb-3  border-[#d7d5d5]  rounded-[6px]">
-            <input
+            <input 
               type="email"
               className="w-65 mt-3  py-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-b-1"
               placeholder="Your Email"
             />
             <input
-              onClick={handlePassInfo}
+              onClick={handlePassInput}
               type="email"
               className="w-65 mt-3  py-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-b-1"
               placeholder="@!@#password"
