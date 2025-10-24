@@ -4,17 +4,11 @@ import Image from "../ui elements/Image";
 import Cartoons from "../../assets/cartoons.png";
 import { Link } from "react-router-dom";
 const Signup = () => {
-const [userInfo,setUserInfo] = useState({
-  name: "",
-  email: "",
-  password: "",
-})
-console.log(userInfo);
 
   return (
     <>
       <Container>
-        <div className="main   bg-white m-auto w-75 rounded-[6px] mt-15">
+        <div  className="main   bg-white m-auto w-75 rounded-[6px] mt-15">
           <div className="up flex items-center pl-12">
             <h1 className="text-[30px] pt-2 text-[#111111] font-sans ">
               REGISTER
