@@ -4,7 +4,12 @@ import Image from "../ui elements/Image";
 import Cartoons from "../../assets/cartoons.png";
 import { Link } from "react-router-dom";
 const Signup = () => {
-
+const [userInfo,setUserInfo] = useState({
+  name: "",
+  email: "",
+  password: "",
+})
+console.log(userInfo);
 
   return (
     <>
