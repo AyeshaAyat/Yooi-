@@ -4,6 +4,8 @@ import Container from "../Container";
 import Image from "../ui elements/Image";
 import Cartoons from "../../assets/cartoons.png";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
 const Signup = () => {
 
 const auth = getAuth();
@@ -42,9 +44,20 @@ const handleSignup = async (e) =>{
 await auth.currentUser.reload();
 console.log(auth.currentUser.displayName);
 
-    alert("SignUp Successful!");
+  //  ----------toast--------
+   toast.success("SignUp Successful 🎉", {
+      position: "top-center",
+    });
+  //  ----------toast--------
+
+
   } catch(err){
     setError(err.message);
+    // -------------toast----
+      toast.error(`Error: ${err.message}`, {
+      position: "top-center",
+    });
+    // -------------toast----
   }
 };
 
@@ -98,7 +111,6 @@ console.log(auth.currentUser.displayName);
                 <button className="py-1.5 w-60 rounded-[3px] hover:bg-[#e3e0e0] cursor-pointer bg-yellow-300 text-[#181715] font-sans font-medium text-[12px] ">
                   Sign up
                 </button>
-{error && <p className="text-red-500 text-sm">{error}</p>}
               </div>
 
               <div className="reset flex justify-between items-center ml-8 w-60 pb-2  ">

@@ -1,4 +1,8 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 import "./App.css";
 import RootLayout from "./components/layouts/RootLayout";
 import Home from "./components/pages/Home";
@@ -15,6 +19,15 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Route>
       </Routes>
+         <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 }
