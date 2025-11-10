@@ -1,13 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Container from "../Container";
 import Image from "../ui elements/Image";
 import Cartoons from "../../assets/cartoons.png";
 import { Link } from "react-router-dom";
 const Signup = () => {
+
+const auth = getAuth();
+  // ---------------HOOKs---------
+  const [name,setName] = useState("");
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [error,setError] = useState("");
+  // ---------------HOOKs---------
+
+
+
+  // -----------Handles------------
+  const handleNameInput=((e)=>{
+setName(e.target.value);
+  });
+  const handleEmailInput=((e)=>{
+setEmail(e.target.value);
+  });
+  const handlePassInput=((e)=>{
+setPassword(e.target.value);
+  });
+  // -----------Handles------------
+// -----------------createUserWithEmailAndPassword------------
+
+const handleSignup = async (e) =>{
+  e.preventDefault();
+  try {
+    const userCredential = await
+    createUserWithEmailAndPassword(auth, email, password);
+
+    await 
+    updateProfile(userCredential.user,
+      {displayName: name}
+    );
+await auth.currentUser.reload();
+console.log(auth.currentUser.displayName);
+
+    alert("SignUp Successful!");
+  } catch(err){
+    setError(err.message);
+  }
+};
+
+
+
+
+
+
+// -----------------createUserWithEmailAndPassword------------
+
   return (
     <>
       <Container>
-      
+      <form onSubmit={handleSignup}>
+
+    
           <div className="main   bg-white m-auto w-75 rounded-[6px] mt-15">
             <div className="up flex items-center pl-12">
               <h1 className="text-[30px] pt-2 text-[#111111] font-sans ">
@@ -20,28 +73,34 @@ const Signup = () => {
             </p>
 
             <div className="down text-center mt-3  ">
-              <input
+              <input 
+              onChange={handleNameInput}
                 type="text"
                 className="w-60 mt-3  p-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-1"
                 placeholder="Full Name"
               />
               <input
+              onChange={handleEmailInput}
                 type="email"
                 className="w-60 mt-3 p-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-1"
                 placeholder="Email"
               />
 
               <input
-                type="email"
+              onChange={handlePassInput}
+                type="password"
                 className="w-60 mt-3 p-1 focus:outline-0 text-[12px]  border-[#a1a0a0] text-black border-1"
                 placeholder="Password"
               />
 
               <div className="buttons mt-4">
+                on
                 <button className="py-1.5 w-60 rounded-[3px] hover:bg-[#e3e0e0] cursor-pointer bg-yellow-300 text-[#181715] font-sans font-medium text-[12px] ">
                   Sign up
                 </button>
+{error && <p className="text-red-500 text-sm">{error}</p>}
               </div>
+
               <div className="reset flex justify-between items-center ml-8 w-60 pb-2  ">
                 <p className="text-[9px] font-sans text-[#3b3a3a]">
                   Already have an account?
@@ -55,6 +114,7 @@ const Signup = () => {
               </div>
             </div>
           </div>
+        </form>
       </Container>
     </>
   );
