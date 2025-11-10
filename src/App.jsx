@@ -8,6 +8,7 @@ import RootLayout from "./components/layouts/RootLayout";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
+import Dashboard from "./components/pages/Dashboard";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route  path="/home" element={<Home />} />
           <Route index element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
         </Route>
       </Routes>
          <ToastContainer

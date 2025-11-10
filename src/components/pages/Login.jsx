@@ -4,8 +4,73 @@ import bgFriends from "../../assets/bgFriends.png";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+// ------HOOKs---------------
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  // ------HOOKs---------------
+
+  // handle input changes
+  const handleEmail = (e) =>
+    {setEmail(e.target.value);
+      
+    }
+    const handlePassword = (e) =>
+      { setPassword(e.target.value);
+        
+      }
+      
+      // handle input changes
+
+
+// -HandleLogin-------------
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // reload to make sure we have the latest verification status
+      await user.reload();
+
+      if (!user.emailVerified) {
+        toast.warning("⚠️ Please verify your email before logging in.", {
+          position: "top-center",
+        });
+        await auth.signOut(); // logout immediately
+        setLoading(false);
+        return;
+      }
+
+      toast.success(`✅ Welcome back, ${user.displayName || "User"}!`, {
+        position: "top-center",
+      });
+
+      navigate("/dashboard"); // redirect to your protected page
+    } catch (err) {
+      console.error(err);
+      toast.error(`❌ ${err.message}`, {
+        position: "top-center",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+// -HandleLogin-------------
+
+
+
   const [InfoSave, setInfoSave] = useState(false);
  const handleinfoSave=()=>{
   setInfoSave(!InfoSave)
@@ -14,6 +79,7 @@ const Login = () => {
   return (
     <>
       <Container>
+        <form onSubmit={handleLogin}>
         <div className="main  py-2 bg-white m-auto w-80 rounded-[6px] mt-15">
           <div className="up flex  items-center pl-7   border-[#c1bfbf] border-b-1">
             <h1 className="text-[30px] text-[#111111] leading-0 font-sans ">
@@ -26,13 +92,15 @@ const Login = () => {
           </div>
           <div className="down border-1 m-3 text-center pb-3  border-[#d7d5d5]  rounded-[6px]">
             <input 
+            onChange={handleEmail}
               type="email"
               className="w-65 mt-3  py-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-b-1"
               placeholder="Your Email"
             />
             <input
              onClick={handleinfoSave}
-              type="email"
+             onChange={handlePassword}
+              type="password"
               className="w-65 mt-3  py-1 focus:outline-0 text-[12px] border-[#a1a0a0]  text-black border-b-1"
               placeholder="@!@#password"
             />
@@ -77,6 +145,7 @@ const Login = () => {
             </div>
           </div>
         </div>
+        </form>
       </Container>
     </>
   );

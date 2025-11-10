@@ -45,6 +45,10 @@ await auth.currentUser.reload();
 console.log(auth.currentUser.displayName);
 
 
+// -----------verification______
+await sendEmailVerification(userCredential.user);
+
+// -----------verification______
 
 //  ----------toast--------
 toast.success("SignUp Successful 🎉", {
@@ -61,10 +65,6 @@ toast.success("SignUp Successful 🎉", {
   });
   // -------------toast----
 }
-// -----------verification______
-await sendEmailVerification(userCredential.user);
-
-// -----------verification______
 };
 
 
