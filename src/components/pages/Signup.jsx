@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile,sendEmailVerification } from "firebase/auth";
 import Container from "../Container";
 import Image from "../ui elements/Image";
 import Cartoons from "../../assets/cartoons.png";
@@ -44,21 +44,27 @@ const handleSignup = async (e) =>{
 await auth.currentUser.reload();
 console.log(auth.currentUser.displayName);
 
-  //  ----------toast--------
-   toast.success("SignUp Successful 🎉", {
-      position: "top-center",
-    });
-  //  ----------toast--------
 
 
-  } catch(err){
-    setError(err.message);
-    // -------------toast----
-      toast.error(`Error: ${err.message}`, {
-      position: "top-center",
-    });
-    // -------------toast----
-  }
+//  ----------toast--------
+toast.success("SignUp Successful 🎉", {
+  position: "top-center",
+});
+//  ----------toast--------
+
+
+} catch(err){
+  setError(err.message);
+  // -------------toast----
+  toast.error(`Error: ${err.message}`, {
+    position: "top-center",
+  });
+  // -------------toast----
+}
+// -----------verification______
+await sendEmailVerification(userCredential.user);
+
+// -----------verification______
 };
 
 
